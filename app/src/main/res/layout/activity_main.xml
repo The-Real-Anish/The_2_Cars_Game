@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/imageView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="#202234"
+    android:backgroundTint="#202234"
+    tools:context=".MainActivity">
+
+    <View
+        style="@style/Separator"
+        android:translationX="102.5dp" />
+
+    <View
+        style="@style/Separator"
+        android:translationX="205dp" />
+
+    <View
+        style="@style/Separator"
+        android:translationX="307.5dp" />
+
+    <ImageView
+        android:id="@+id/second_car"
+        android:layout_width="83dp"
+        android:layout_height="83dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="35dp"
+        android:rotation="0"
+        android:scaleY="-1"
+        app:srcCompat="@drawable/red_car_vec" />
+
+    <ImageView
+        android:id="@+id/first_car"
+        android:layout_width="83dp"
+        android:layout_height="83dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginBottom="35dp"
+        android:scaleY="-1"
+        app:srcCompat="@drawable/blue_car_vec" />
+
+</RelativeLayout>
