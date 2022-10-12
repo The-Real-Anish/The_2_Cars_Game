@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Cppapp</string>
     <string name="press_me">Press Me</string>
+    <string name="background_screen">background_screen</string>
+    <string name="make_lane">make_lane</string>
+    <string name="car_on_left">car_on_left</string>
+    <string name="car_on_right">car_on_right</string>
 </resources>

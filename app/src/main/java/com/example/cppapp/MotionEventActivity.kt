@@ -8,9 +8,9 @@ import android.widget.ImageView
 class MotionEventActivity : AppCompatActivity() {
 
     //bringing the main-screen and cars into the play
-    val blue_car: ImageView = findViewById(R.id.first_car)
-    val red_car: ImageView = findViewById(R.id.second_car)
-    val screen = findViewById<View>(R.id.imageView)
+    val blue_car: ImageView = findViewById(R.id.car_1)
+    val red_car: ImageView = findViewById(R.id.car_2)
+    val screen: ImageView = findViewById(R.id.game_screen)
 
     val blue_leftturn: Runnable =
         Runnable { blue_car.animate().rotationBy(-30f).duration = 500 }
@@ -61,9 +61,6 @@ class MotionEventActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        screen.setOnTouchListener {v: View, m: MotionEvent ->
-            handleTouch(m)
-            true
-        }
+        screen
     }
 }

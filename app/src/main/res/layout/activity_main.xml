@@ -6,43 +6,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
-    android:background="#202234"
-    android:backgroundTint="#202234"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
-    <View
-        style="@style/Separator"
-        android:translationX="102.5dp" />
+    <ImageView
+        android:contentDescription="@string/background_screen"
+        android:id="@+id/game_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        />
 
     <View
-        style="@style/Separator"
-        android:translationX="205dp" />
+        android:id="@+id/line_1"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="102dp"
+        android:layout_marginEnd="306dp"
+        android:background="@color/light_line"
+        android:contentDescription="@string/make_lane" />
 
     <View
-        style="@style/Separator"
-        android:translationX="307.5dp" />
+        android:id="@+id/line_2"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="204dp"
+        android:layout_marginEnd="204dp"
+        android:background="@color/light_line"
+        android:contentDescription="@string/make_lane" />
+
+    <View
+        android:id="@+id/line_3"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="306dp"
+        android:layout_marginEnd="102dp"
+        android:background="@color/light_line"
+        android:contentDescription="@string/make_lane" />
 
     <ImageView
-        android:id="@+id/second_car"
-        android:layout_width="83dp"
-        android:layout_height="83dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="35dp"
-        android:rotation="0"
+        android:id="@+id/car_1"
+        android:layout_width="102dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/car_on_left"
         android:scaleY="-1"
-        app:srcCompat="@drawable/red_car_vec" />
+        android:src="@drawable/lightblue_car_vec"
+        android:translationX="0dp"
+        android:translationY="620dp" />
 
     <ImageView
-        android:id="@+id/first_car"
-        android:layout_width="83dp"
-        android:layout_height="83dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="9dp"
-        android:layout_marginBottom="35dp"
+        android:id="@+id/car_2"
+        android:layout_width="102dp"
+        android:layout_height="80dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:contentDescription="@string/car_on_right"
         android:scaleY="-1"
-        app:srcCompat="@drawable/blue_car_vec" />
+        android:src="@drawable/red_car_vec"
+        android:translationX="307.5dp"
+        android:translationY="620dp" />
 
 </RelativeLayout>
