@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/imageView"
     android:layout_width="match_parent"
@@ -52,7 +51,6 @@
         android:contentDescription="@string/car_on_left"
         android:scaleY="-1"
         android:src="@drawable/lightblue_car_vec"
-        android:translationX="0dp"
         android:translationY="620dp" />
 
     <ImageView
@@ -64,7 +62,7 @@
         android:contentDescription="@string/car_on_right"
         android:scaleY="-1"
         android:src="@drawable/red_car_vec"
-        android:translationX="307.5dp"
+        android:translationX="306dp"
         android:translationY="620dp" />
 
 </RelativeLayout>
