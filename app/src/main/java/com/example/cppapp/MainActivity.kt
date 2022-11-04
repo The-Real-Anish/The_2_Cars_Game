@@ -40,15 +40,9 @@ class MainActivity : AppCompatActivity() {
 
         var blueGoRight = true
         var redGoRight = false
-        var animationEnded = true
 
         val blueEvent: Array<MotionEvent> = emptyArray()
         val redEvent: Array<MotionEvent> = emptyArray()
-        var is_blue_event = false
-        var is_red_event = false
-        var prevTime: Long = 0
-        var bluePrevTime: Long = 0
-        var redPrevTime: Long = 0
 
         //val blue_moveright = ObjectAnimator.ofFloat(blue_car, View.TRANSLATION_X,
         //                                            blue_car.translationX, blue_car.translationX + 102.5f)
@@ -107,66 +101,56 @@ class MainActivity : AppCompatActivity() {
 
             if(event.action == MotionEvent.ACTION_DOWN) {
 
-                val currTime = event.eventTime
-                animationEnded = false
-
                 val touchedX: Float = event.x
-                Log.d("Abscissa", touchedX.toString())
+
+                //The next few lines record logs of motion
+                //Primarily to be used for testing, final app might not need it
+
+                /*Log.d("Abscissa", touchedX.toString())
                 Log.d("Time", event.eventTime.toString())
-                Log.d("Distance of line", distance.toString())
+                Log.d("Distance of line", distance.toString())*/
 
                 if (touchedX < distance) {
 
-                    if(currTime - bluePrevTime > 300) {
-                        bluePrevTime = currTime
+                    Log.d("Blue right turn - ", blueGoRight.toString())
+                    blueCar.animate().apply {
+                        duration = 200
+                        //rotationBy(30f)
+                        blueGoRight = if (blueGoRight) {
 
-                        Log.d("Blue right turn - ", blueGoRight.toString())
-                        blueCar.animate().apply {
-                            duration = 300
-                            //rotationBy(30f)
-                            blueGoRight = if (blueGoRight) {
-                                translationXBy(294f)
-                                false
-                            } else {
-                                translationXBy(-294f)
-                                true
-                            }
-                        }.start()
-                    }
+                            //conversion of dp to float is currently using hardcoded values
+                            //Approx scale used: 35f = 12dp, so range around 294-297?
+                            //TODO Later: change from hardcoded values to px-density dependent values
+                            translationX(294f)
+                            false
+                        } else {
+                            translationX(0f)
+                            true
+                        }
+                    }.start()
+
                 } else {
 
-                    if(currTime - redPrevTime > 300) {
-                        redPrevTime = currTime
+                    Log.d("Red right turn - ", redGoRight.toString())
+                    redCar.animate().apply {
+                        duration = 200
+                        //rotationBy(-30f)
+                        redGoRight = if (redGoRight) {
+                            translationX(883f)
+                            false
+                        } else {
+                            translationX(589f)
+                            true
+                        }
+                    }.start()
 
-                        Log.d("Red right turn - ", redGoRight.toString())
-                        redCar.animate().apply {
-                            duration = 300
-                            //rotationBy(-30f)
-                            redGoRight = if (redGoRight) {
-                                translationXBy(294f)
-                                false
-                            } else {
-                                translationXBy(-294f)
-                                true
-                            }
-                        }.start()
-                    }
                 }
-                animationEnded = true
-
             }
             true
         }
 
     }
 
-    /**
-     * A native method that is implemented by the 'cppapp' native library,
-     * which is packaged with this application.
-     */
-    //external fun stringFromJNI(): String
-
-    //overriding the original onCreate
     //TO BE DONE ONLY WHEN THE GAME STARTS
 }
 
